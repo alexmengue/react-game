@@ -1,8 +1,13 @@
 import React from 'react';
 
+import Hero from '../Hero';
+
 const Board = () => {
   return (
-    <img src="./assets/tileset.gif" alt="Game board" />
+    <div>
+      <img src="./assets/tileset.gif" alt="Game board" />
+      <Hero />
+    </div>
   );
 };
 
