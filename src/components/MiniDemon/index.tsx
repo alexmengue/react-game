@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TILE_SIZE } from '../../settings/constants';
+import { TILE_SIZE, HEAD_OFFSET } from '../../settings/constants';
 
 import './index.css';
 
@@ -11,9 +11,10 @@ const MiniDemon = () => {
       bottom: TILE_SIZE * 5,
       left: TILE_SIZE * 7,
       width: TILE_SIZE,
-      height: 100,
+      height: TILE_SIZE + HEAD_OFFSET,
       backgroundImage: 'url(./assets/MINI-DEMON.png)',
       backgroundRepeat: 'no-repeat',
+      backgroundPosition: `0 -${TILE_SIZE - HEAD_OFFSET}px`,
       animation: 'mini-demon-animation 1s steps(4) infinite'
     }}
     />

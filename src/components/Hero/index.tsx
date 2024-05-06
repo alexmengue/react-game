@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TILE_SIZE } from '../../settings/constants';
+import { TILE_SIZE, HEAD_OFFSET } from '../../settings/constants';
 
 import './index.css';
 
@@ -11,9 +11,10 @@ const Hero = () => {
       bottom: TILE_SIZE * 2,
       left: TILE_SIZE,
       width: TILE_SIZE,
-      height: 100,
+      height: TILE_SIZE + HEAD_OFFSET,
       backgroundImage: 'url(./assets/HERO.png)',
       backgroundRepeat: 'no-repeat',
+      backgroundPosition: `0 -${TILE_SIZE - HEAD_OFFSET}px`,
       animation: 'hero-animation 1s steps(4) infinite'
     }}
     />
