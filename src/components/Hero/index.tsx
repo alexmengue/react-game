@@ -13,15 +13,18 @@ const initialPosition = {
 const Hero = () => {
 
   const [positionState, updatePositionState] = React.useState(initialPosition);
+  const [direction, updateDirection] = React.useState('RIGHT');
 
   useEventListener('keydown', (event:any) => {
     if (event.key === 'ArrowLeft') {
       updatePositionState({ x: positionState.x - 1, y: positionState.y });
+      updateDirection('LEFT');      
     } else if (event.key === 'ArrowRight') {
       updatePositionState({ x: positionState.x + 1, y: positionState.y });
+      updateDirection('RIGHT');
     } else if (event.key === 'ArrowUp') {
       updatePositionState({ x: positionState.x, y: positionState.y + 1 });
-    } else {
+    } else if (event.key === 'ArrowDown') {
       updatePositionState({ x: positionState.x, y: positionState.y - 1 });
     }
   });
@@ -36,7 +39,8 @@ const Hero = () => {
       backgroundImage: 'url(./assets/HERO.png)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `0 -${TILE_SIZE - HEAD_OFFSET}px`,
-      animation: 'hero-animation 1s steps(4) infinite'
+      animation: 'hero-animation 1s steps(4) infinite',
+      transform: `scaleX(${direction === 'RIGHT' ? 1 : -1})`
     }}
     />
   );
