@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { TILE_SIZE, HEAD_OFFSET } from '../../settings/constants';
+import { TILE_SIZE, HEAD_OFFSET, EDirection } from '../../settings/constants';
+
 import useEnemyMoviment from '../../hooks/useEnemyMoviment';
 
 import './index.css';
@@ -24,7 +25,7 @@ const MiniDemon = () => {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `0 -${TILE_SIZE - HEAD_OFFSET}px`,
       animation: 'mini-demon-animation 1s steps(4) infinite',
-      transform: `scaleX(${moviment.direction === 'RIGHT' ? 1 : -1})`
+      transform: `scaleX(${moviment.direction === EDirection.RIGHT ? 1 : -1})`
     }}
     />
   );
