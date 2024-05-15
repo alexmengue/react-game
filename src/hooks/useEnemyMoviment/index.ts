@@ -9,22 +9,24 @@ function useEnemyMoviment (initialPosition) {
   const [direction, updateDirection] = React.useState(EDirection.RIGHT);
 
 useInterval(function move() {
-    const random = Math.random() * 3;
+    const random = Math.floor(Math.random() * 4);
+    const directionArray = Object.values(EDirection);
+    const randomDirection = directionArray[random];
 
-    // if (event.key === EDirection.LEFT) {
-    //   updatePositionState({ x: positionState.x - 1, y: positionState.y });
-    //   updateDirection(EDirection.LEFT);      
+    if (randomDirection === EDirection.LEFT) {
+      updatePositionState({ x: positionState.x - 1, y: positionState.y });
+      updateDirection(EDirection.LEFT);      
   
-    // } else if (event.key === EDirection.RIGHT) {
-    //   updatePositionState({ x: positionState.x + 1, y: positionState.y });
-    //   updateDirection(EDirection.RIGHT);
+    } else if (randomDirection === EDirection.RIGHT) {
+      updatePositionState({ x: positionState.x + 1, y: positionState.y });
+      updateDirection(EDirection.RIGHT);
   
-    // } else if (event.key === EDirection.UP) {
-    //   updatePositionState({ x: positionState.x, y: positionState.y + 1 });
+    } else if (randomDirection === EDirection.UP) {
+      updatePositionState({ x: positionState.x, y: positionState.y + 1 });
       
-    // } else if (event.key === EDirection.DOWN) {
-    //   updatePositionState({ x: positionState.x, y: positionState.y - 1 });
-    // }
+    } else if (randomDirection === EDirection.DOWN) {
+      updatePositionState({ x: positionState.x, y: positionState.y - 1 });
+    }
   }, 2000);
 
   return {
