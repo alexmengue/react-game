@@ -14,6 +14,7 @@ useInterval(function move() {
     const randomDirection = directionArray[random];
     const nextPosition = handleNextPosition(randomDirection, positionState);
     
+    updateDirection(randomDirection);
     updatePositionState(nextPosition);
   }, 2000);
 
