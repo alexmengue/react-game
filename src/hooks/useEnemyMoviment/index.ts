@@ -6,7 +6,7 @@ import { handleNextPosition } from '../../contexts/canvas/helpers';
 
 function useEnemyMoviment (initialPosition) {
   const [positionState, updatePositionState] = React.useState(initialPosition);
-  const [direction, updateDirection] = React.useState(EDirection.RIGHT);
+  const [direction, updateDirectionState] = React.useState(EDirection.RIGHT);
 
 useInterval(function move() {
     const random = Math.floor(Math.random() * 4);
@@ -14,7 +14,7 @@ useInterval(function move() {
     const randomDirection = directionArray[random];
     const nextPosition = handleNextPosition(randomDirection, positionState);
     
-    updateDirection(randomDirection);
+    updateDirectionState(randomDirection);
     updatePositionState(nextPosition);
   }, 2000);
 
