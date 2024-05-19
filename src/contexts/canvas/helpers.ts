@@ -1,6 +1,6 @@
 import { EDirection } from "../../settings/constants";
 
-export function handleNextPosition(direction, position) {
+export function handleNextPosition(direction: any, position: any) {
 
   switch(direction) {
     case EDirection.LEFT:

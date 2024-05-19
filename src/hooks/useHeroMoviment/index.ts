@@ -4,12 +4,21 @@ import useEventListener from '@use-it/event-listener';
 import { EDirection } from '../../settings/constants';
 import { handleNextPosition } from '../../contexts/canvas/helpers';
 
-function useHeroMoviment (initialPosition) {
+function useHeroMoviment (initialPosition: any) {
   const [positionState, updatePositionState] = React.useState(initialPosition);
   const [direction, updateDirectionState] = React.useState(EDirection.RIGHT);
 
   useEventListener('keydown', (event: any) => {
     const direction = event.key as EDirection;
+
+    if (direction !== EDirection.LEFT &&
+        direction !== EDirection.RIGHT &&
+        direction !== EDirection.UP &&
+        direction !== EDirection.DOWN
+    ) {
+      return;
+    }
+
     const nextPosition = handleNextPosition(direction, positionState);
 
     updatePositionState(nextPosition);
