@@ -6,14 +6,19 @@ import useEnemyMoviment from '../../hooks/useEnemyMoviment';
 
 import './index.css';
 
-const initialPosition = {
-  x: 10,
-  y: 8
+const moviment = {
+  position: { x: 8, y: 15 },
+  direction: EDirection.RIGHT
 };
 
-const MiniDemon = () => {
+interface IProps {
+  position: {
+    x: number;
+    y: number
+  }
+};
 
-  const moviment = useEnemyMoviment(initialPosition);
+const MiniDemon = (props: IProps) => {
   return (
     <div style={{
       position: 'absolute',

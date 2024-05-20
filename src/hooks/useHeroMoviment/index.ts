@@ -11,11 +11,7 @@ function useHeroMoviment (initialPosition: any) {
   useEventListener('keydown', (event: any) => {
     const direction = event.key as EDirection;
 
-    if (direction !== EDirection.LEFT &&
-        direction !== EDirection.RIGHT &&
-        direction !== EDirection.UP &&
-        direction !== EDirection.DOWN
-    ) {
+    if (direction.indexOf('Arrrow') === -1) {
       return;
     }
 

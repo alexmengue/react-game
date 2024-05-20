@@ -12,7 +12,7 @@ const Board = () => {
   return (
     <div>
       <Hero />
-      <MiniDemon />
+      <MiniDemon position={{ x: 5, y: 5 }}/>
       <Demon />
       <Chest />
       <Trap />
