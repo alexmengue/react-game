@@ -12,7 +12,7 @@ const Board = () => {
   return (
     <div>
       <Hero />
-      <MiniDemon position={{ x: 5, y: 5 }}/>
+      <MiniDemon initialPosition={{ x: 8, y: 12 }}/>
       <Demon />
       <Chest />
       <Trap />
