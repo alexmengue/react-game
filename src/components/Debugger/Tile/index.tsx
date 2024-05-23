@@ -1,7 +1,8 @@
 import React from "react";
 
 interface IProps {
-  position: { x: number, y: number }
+  position: { x: number, y: number };
+  text: number;
 }
 
 function Tile(props: IProps) {
