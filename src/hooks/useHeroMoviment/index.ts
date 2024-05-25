@@ -4,7 +4,7 @@ import useEventListener from '@use-it/event-listener';
 import { EDirection } from '../../settings/constants';
 import { handleNextPosition } from '../../contexts/canvas/helpers';
 
-function useHeroMoviment (initialPosition: any) {
+function useHeroMoviment (initialPosition) {
   const [positionState, updatePositionState] = React.useState(initialPosition);
   const [direction, updateDirectionState] = React.useState(EDirection.RIGHT);
 

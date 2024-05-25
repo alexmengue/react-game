@@ -8,6 +8,18 @@ interface IProps {
 }
 
 function Tile(props: IProps) {
+  function getTileColor() {
+    switch(props.text) {
+      case 0:
+        return 'yellow';
+
+      case 1:
+        return 'red';
+    }
+  }
+
+  const color = getTileColor();
+
   return (
     <div style={{
       position: 'absolute',
@@ -15,8 +27,8 @@ function Tile(props: IProps) {
       top: TILE_SIZE * props.position.y,
       width: TILE_SIZE,
       height: TILE_SIZE,
-      border: '2px solid red',
-      color: 'yellow'
+      border: `1px solid ${color}`,
+      color: color
     }}>
       {props.text}
     </div>
