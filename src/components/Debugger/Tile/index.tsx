@@ -12,11 +12,14 @@ function Tile(props: IProps) {
     <div style={{
       position: 'absolute',
       left: TILE_SIZE * props.position.x,
-      bottom: TILE_SIZE * props.position.y,
+      top: TILE_SIZE * props.position.y,
       width: TILE_SIZE,
       height: TILE_SIZE,
-      border: '2px solid red'
-    }}></div>
+      border: '2px solid red',
+      color: 'yellow'
+    }}>
+      {props.text}
+    </div>
   );
 }
 
