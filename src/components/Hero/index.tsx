@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <div style={{
       position: 'absolute',
-      top: TILE_SIZE * position.y,
+      top: TILE_SIZE * position.y - HEAD_OFFSET,
       left: TILE_SIZE * position.x,
       width: TILE_SIZE,
       height: TILE_SIZE + HEAD_OFFSET,
@@ -25,7 +25,8 @@ const Hero = () => {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `0 -${TILE_SIZE - HEAD_OFFSET}px`,
       animation: 'hero-animation 1s steps(4) infinite',
-      transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`
+      transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`,
+      zIndex: 1
     }}
     />
   );
