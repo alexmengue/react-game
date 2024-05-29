@@ -6,13 +6,12 @@ import useHeroMoviment from '../../hooks/useHeroMoviment';
 
 import './index.css';
 
-const initialPosition = {
-  x: 1,
-  y: 2
-};
+interface IProps {
+  initialPosition: { x: number, y: number }
+}
 
-const Hero = () => {
-  const { position, direction } = useHeroMoviment(initialPosition);
+const Hero = (props: IProps) => {
+  const { position, direction } = useHeroMoviment(props.initialPosition);
 
   return (
     <div style={{
