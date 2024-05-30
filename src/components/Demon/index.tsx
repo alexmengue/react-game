@@ -11,8 +11,15 @@ const initialPosition = {
   y: 5
 };
 
-const Demon = () => {
-  const moviment = useEnemyMoviment(initialPosition);
+interface IProps {
+  initialPosition: {
+    x: number;
+    y: number
+  }
+};
+
+const Demon = (props: IProps) => {
+  const moviment = useEnemyMoviment(props.initialPosition);
 
   return (
     <div style={{
