@@ -8,6 +8,15 @@ interface IProps {
   text: number;
 }
 
+const FL = ECanvas.FLOOR;
+const WL = ECanvas.WALL;
+const DR = ECanvas.DOOR;
+const TR = ECanvas.TRAP;
+const MD = ECanvas.MINI_DEMON;
+const DE = ECanvas.DEMON;
+const CH = ECanvas.CHEST;
+const HE = ECanvas.HERO;
+
 function Tile(props: IProps) {
   function getTileColor() {
     switch(props.text) {
