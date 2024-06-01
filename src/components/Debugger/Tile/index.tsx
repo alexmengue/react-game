@@ -8,15 +8,6 @@ interface IProps {
   text: number;
 }
 
-const FL = ECanvas.FLOOR;
-const WL = ECanvas.WALL;
-const DR = ECanvas.DOOR;
-const TR = ECanvas.TRAP;
-const MD = ECanvas.MINI_DEMON;
-const DE = ECanvas.DEMON;
-const CH = ECanvas.CHEST;
-const HE = ECanvas.HERO;
-
 function Tile(props: IProps) {
   function getTileColor() {
     switch(props.text) {
@@ -25,6 +16,19 @@ function Tile(props: IProps) {
 
       case ECanvas.WALL:
         return 'yellow';
+
+      case ECanvas.DOOR:
+        return 'white';
+
+      case ECanvas.TRAP:
+        return 'chartreuse';
+
+      case ECanvas.CHEST:
+        return 'cyan';
+
+      case ECanvas.MINI_DEMON:
+      case ECanvas.DEMON:
+        return 'red';
 
       case ECanvas.HERO:
         return 'magenta';
@@ -42,7 +46,8 @@ function Tile(props: IProps) {
       height: TILE_SIZE,
       border: `1px solid ${color}`,
       color: color,
-      fontSize: 32
+      fontSize: 32,
+      zIndex: 2
     }}>
       {props.text}
     </div>
