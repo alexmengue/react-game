@@ -1,3 +1,5 @@
+import React from "react";
+
 import { EDirection } from "../../settings/constants";
 
 export function handleNextPosition(direction, position) {
@@ -60,6 +62,8 @@ export const canvas = [
   [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL]
 ];
 
-function handleCanvasMoviment() {
-  //soon
+function changeCanvas(currentPosition, nextPosition) {
+  if (nextPosition === ECanvas.WALL) {
+    return false;
+  }
 }

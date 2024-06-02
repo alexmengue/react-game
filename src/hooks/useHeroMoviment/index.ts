@@ -14,7 +14,7 @@ function useHeroMoviment (initialPosition) {
     if (direction.indexOf('Arrrow') === -1) {
       return;
     }
-
+    
     const nextPosition = handleNextPosition(direction, positionState);
 
     updatePositionState(nextPosition);
