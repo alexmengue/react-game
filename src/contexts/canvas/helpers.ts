@@ -62,8 +62,12 @@ export const canvas = [
   [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL]
 ];
 
-function changeCanvas(currentPosition, nextPosition) {
-  if (nextPosition === ECanvas.WALL) {
+export function checkValidMoviment(nextPosition) {
+  const canvasValue = canvas[nextPosition.y][nextPosition.x]
+
+  if (canvasValue === ECanvas.WALL) {
     return false;
   }
+
+  return true;
 }

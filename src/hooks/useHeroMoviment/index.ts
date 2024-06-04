@@ -2,7 +2,7 @@ import React from 'react';
 import useEventListener from '@use-it/event-listener';
 
 import { EDirection } from '../../settings/constants';
-import { handleNextPosition } from '../../contexts/canvas/helpers';
+import { checkValidMoviment, handleNextPosition } from '../../contexts/canvas/helpers';
 
 function useHeroMoviment (initialPosition) {
   const [positionState, updatePositionState] = React.useState(initialPosition);
@@ -11,19 +11,22 @@ function useHeroMoviment (initialPosition) {
   useEventListener('keydown', (event: any) => {
     const direction = event.key as EDirection;
 
-    if (direction.indexOf('Arrrow') === -1) {
+    if (direction.indexOf('Arrow') === -1) {
       return;
     }
     
     const nextPosition = handleNextPosition(direction, positionState);
+    const isValidMoviment = checkValidMoviment(nextPosition);
 
-    updatePositionState(nextPosition);
-    updateDirectionState(direction);
+    if (isValidMoviment) {
+      updatePositionState(nextPosition);
+      updateDirectionState(direction);
+    }
   });
 
   return {
     position: positionState,
-    direction: direction
+    direction: direction,
   }
 }
 
