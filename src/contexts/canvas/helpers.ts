@@ -69,5 +69,9 @@ export function checkValidMoviment(nextPosition) {
     return false;
   }
 
+  if (canvasValue === ECanvas.CHEST) {
+    console.log('chest open');
+  }
+
   return true;
 }
