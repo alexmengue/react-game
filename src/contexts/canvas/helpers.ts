@@ -73,5 +73,9 @@ export function checkValidMoviment(nextPosition) {
     console.log('chest open');
   }
 
+  if (canvasValue === ECanvas.TRAP) {
+    console.log('died on trap');
+  }
+
   return true;
 }
