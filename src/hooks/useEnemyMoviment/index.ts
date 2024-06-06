@@ -2,7 +2,7 @@ import React from 'react';
 import useInterval from '@use-it/interval';
 
 import { EDirection } from '../../settings/constants';
-import { handleNextPosition } from '../../contexts/canvas/helpers';
+import { checkValidMoviment, handleNextPosition } from '../../contexts/canvas/helpers';
 
 function useEnemyMoviment (initialPosition) {
   const [positionState, updatePositionState] = React.useState(initialPosition);
@@ -12,10 +12,14 @@ useInterval(function move() {
     const random = Math.floor(Math.random() * 4);
     const directionArray = Object.values(EDirection);
     const randomDirection = directionArray[random];
+
     const nextPosition = handleNextPosition(randomDirection, positionState);
-    
-    updateDirectionState(randomDirection);
-    updatePositionState(nextPosition);
+    const isValidMoviment = checkValidMoviment(nextPosition);
+
+    if (isValidMoviment) {
+      updateDirectionState(randomDirection);
+      updatePositionState(nextPosition);
+    }
   }, 2000);
 
   return {
