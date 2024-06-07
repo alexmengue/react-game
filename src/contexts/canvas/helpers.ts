@@ -79,3 +79,11 @@ export function checkValidMoviment(nextPosition) {
 
   return true;
 }
+
+function getHeroValidMoves() {
+  //soon
+}
+
+function getEnemyValidMoves() {
+  //soon
+}
