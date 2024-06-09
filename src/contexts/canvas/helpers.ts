@@ -65,6 +65,8 @@ export const canvas = [
 export function checkValidMoviment(nextPosition) {
   const canvasValue = canvas[nextPosition.y][nextPosition.x]
 
+  getHeroValidMoves(canvasValue)
+
   if (canvasValue === ECanvas.WALL) {
     return false;
   }
@@ -80,8 +82,13 @@ export function checkValidMoviment(nextPosition) {
   return true;
 }
 
-function getHeroValidMoves() {
-  //soon
+function getHeroValidMoves(canvasValue) {
+  return {
+    valid: canvasValue === ECanvas.FLOOR || canvasValue === ECanvas.CHEST || canvasValue === ECanvas.TRAP,
+    dead:  canvasValue === ECanvas.TRAP || canvasValue === ECanvas.MINI_DEMON || canvasValue === ECanvas.DEMON,
+    chest: canvasValue === ECanvas.CHEST,
+    door: canvasValue === ECanvas.DOOR
+  }
 }
 
 function getEnemyValidMoves() {
