@@ -84,7 +84,7 @@ export function checkValidMoviment(nextPosition) {
 
 function getHeroValidMoves(canvasValue) {
   return {
-    valid: canvasValue === ECanvas.FLOOR || canvasValue === ECanvas.CHEST || canvasValue === ECanvas.TRAP,
+    valid: canvasValue === ECanvas.FLOOR || canvasValue === ECanvas.CHEST || canvasValue === ECanvas.TRAP || canvasValue === ECanvas.MINI_DEMON || canvasValue === ECanvas.DEMON,
     dead:  canvasValue === ECanvas.TRAP || canvasValue === ECanvas.MINI_DEMON || canvasValue === ECanvas.DEMON,
     chest: canvasValue === ECanvas.CHEST,
     door: canvasValue === ECanvas.DOOR
