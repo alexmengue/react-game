@@ -16,7 +16,7 @@ function useHeroMoviment (initialPosition) {
     }
     
     const nextPosition = handleNextPosition(direction, positionState);
-    const isValidMoviment = checkValidMoviment(nextPosition);
+    const isValidMoviment = checkValidMoviment(nextPosition, 'hero');
 
     if (isValidMoviment) {
       updatePositionState(nextPosition);

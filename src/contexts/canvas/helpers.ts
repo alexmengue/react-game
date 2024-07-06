@@ -62,11 +62,14 @@ export const canvas = [
   [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL]
 ];
 
-export function checkValidMoviment(nextPosition) {
+export function checkValidMoviment(nextPosition, walker) {
   const canvasValue = canvas[nextPosition.y][nextPosition.x]
 
-  getHeroValidMoves(canvasValue);
-  getEnemyValidMoves(canvasValue);
+  if (walker === 'hero') {
+    getHeroValidMoves(canvasValue);
+  } else {
+    getEnemyValidMoves(canvasValue);
+  }
 
   if (canvasValue === ECanvas.WALL) {
     return false;

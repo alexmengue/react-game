@@ -14,7 +14,7 @@ useInterval(function move() {
     const randomDirection = directionArray[random];
 
     const nextPosition = handleNextPosition(randomDirection, positionState);
-    const isValidMoviment = checkValidMoviment(nextPosition);
+    const isValidMoviment = checkValidMoviment(nextPosition, 'enemy');
 
     if (isValidMoviment) {
       updateDirectionState(randomDirection);
