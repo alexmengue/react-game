@@ -12,5 +12,5 @@ export enum EDirection {
 
 export enum EWalker {
   HERO = 'hero',
-  ENEMY = 'enemy'
+  ENEMY = 'enemy',
 }

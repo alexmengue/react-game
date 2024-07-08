@@ -1,6 +1,6 @@
 import React from "react";
 
-import { EDirection } from "../../settings/constants";
+import { EDirection, EWalker } from "../../settings/constants";
 
 export function handleNextPosition(direction, position) {
 
@@ -65,7 +65,7 @@ export const canvas = [
 export function checkValidMoviment(nextPosition, walker) {
   const canvasValue = canvas[nextPosition.y][nextPosition.x]
 
-  if (walker === 'hero') {
+  if (walker === EWalker.HERO) {
     getHeroValidMoves(canvasValue);
   } else {
     getEnemyValidMoves(canvasValue);
