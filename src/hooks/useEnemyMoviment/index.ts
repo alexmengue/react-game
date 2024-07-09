@@ -28,4 +28,4 @@ useInterval(function move() {
   }
 }
 
-export default useEnemyMoviment;
+export default useEnemyMoviment; 

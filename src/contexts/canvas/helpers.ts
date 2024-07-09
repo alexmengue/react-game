@@ -65,25 +65,9 @@ export const canvas = [
 export function checkValidMoviment(nextPosition, walker) {
   const canvasValue = canvas[nextPosition.y][nextPosition.x]
 
-  if (walker === EWalker.HERO) {
-    getHeroValidMoves(canvasValue);
-  } else {
-    getEnemyValidMoves(canvasValue);
-  }
 
-  if (canvasValue === ECanvas.WALL) {
-    return false;
-  }
-
-  if (canvasValue === ECanvas.CHEST) {
-    console.log('chest open');
-  }
-
-  if (canvasValue === ECanvas.TRAP) {
-    console.log('died on trap');
-  }
-
-  return true;
+  let result = walker === EWalker.HERO ? getHeroValidMoves(canvasValue) : getEnemyValidMoves(canvasValue);
+  return result;
 }
 
 function getHeroValidMoves(canvasValue) {
