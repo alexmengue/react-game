@@ -16,11 +16,15 @@ function useHeroMoviment (initialPosition) {
     }
     
     const nextPosition = handleNextPosition(direction, positionState);
-    const isValidMoviment = checkValidMoviment(nextPosition, EWalker.HERO);
+    const nextMove = checkValidMoviment(nextPosition, EWalker.HERO);
 
-    if (isValidMoviment) {
+    if (nextMove.valid) {
       updatePositionState(nextPosition);
       updateDirectionState(direction);
+    }
+
+    if (nextMove.dead) {
+      alert('YOU DIED');
     }
   });
 
