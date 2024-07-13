@@ -24,3 +24,5 @@ function CanvasProvider(props: IProps) {
     </CanvasContext.Provider>
   )
 };
+
+export default CanvasProvider;
