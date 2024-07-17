@@ -18,6 +18,14 @@ function CanvasProvider(props: IProps) {
       const nextPosition = handleNextPosition(direction, position);
       const nextMove = checkValidMoviment(nextPosition, walker);
 
+      if (nextMove.valid) {
+        updateCanvasState((prevState) => {
+          const newCanvas = Object.assign([], prevState.canvas);
+          
+
+        });
+      }
+
       return {
         nextPosition,
         nextMove
