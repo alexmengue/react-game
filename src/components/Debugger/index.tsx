@@ -1,7 +1,6 @@
 import React from "react";
 import Tile from "./Tile";
 
-import { canvas } from "../../contexts/canvas/helpers";
 import { CanvasContext } from "../../contexts/canvas";
 
 function getCanvasMap(canvas) {
