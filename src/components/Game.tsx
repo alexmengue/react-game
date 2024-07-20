@@ -3,12 +3,15 @@ import React from 'react';
 import CanvasProvider from '../contexts/canvas';
 import Debugger from './Debugger';
 import Board from './Board';
+import ChestsProvider from '../contexts/chests';
 
 function Game() {
   return (
     <CanvasProvider>
-      <Debugger />
-      <Board />
+      <ChestsProvider>
+        <Debugger />
+        <Board />
+      </ChestsProvider>
     </CanvasProvider>
   )
 };

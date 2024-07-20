@@ -26,7 +26,7 @@ function ChestsProvider(props: IProps) {
   });
 
   return (
-    <ChestsContext value={chestsState}>{props.children}</ChestsContext>
+    <ChestsContext.Provider value={chestsState}>{props.children}</ChestsContext.Provider>
   )
 }
 
