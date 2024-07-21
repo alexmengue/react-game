@@ -1,9 +1,9 @@
 import React from 'react';
 
-import CanvasProvider from '../contexts/canvas';
-import Debugger from './Debugger';
 import Board from './Board';
+import Debugger from './Debugger';
 import ChestsProvider from '../contexts/chests';
+import CanvasProvider from '../contexts/canvas';
 
 function Game() {
   return (
