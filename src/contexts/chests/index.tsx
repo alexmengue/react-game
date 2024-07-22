@@ -21,7 +21,16 @@ function ChestsProvider(props: IProps) {
       positions: []
     },
     updateOpenedChests: () => {
-      //soon
+      updateChestsState((prevState) => {
+        return {
+          totalChests: prevState.totalChests,
+          openedChests: {
+            total: prevState.openedChests.total + 1,
+            positions: []
+          },
+          updateOpenedChests: prevState.updateOpenedChests
+        }
+      });
     }
   });
 
