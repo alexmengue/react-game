@@ -30,7 +30,7 @@ function useHeroMoviment (initialPosition) {
     }
 
     if (moviment.nextMove.chest) {
-      chestsContext.updateOpenedChests();
+      chestsContext.updateOpenedChests(moviment.nextPosition);
     }
   });
 

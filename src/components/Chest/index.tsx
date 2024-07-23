@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { TILE_SIZE } from '../../settings/constants';
+import { ChestsContext } from '../../contexts/chests';
 
 import './index.css';
 
@@ -9,6 +10,12 @@ interface IProps {
 }
 
 const Chest = (props: IProps) => {
+  const chestsContext = React.useContext(ChestsContext);
+
+  const shouldAnimate = chestsContext.openedChests.positions.find(() => {
+    //soon
+  });
+
   return (
     <div style={{
       position: 'absolute',
