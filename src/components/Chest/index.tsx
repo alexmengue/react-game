@@ -12,9 +12,13 @@ interface IProps {
 const Chest = (props: IProps) => {
   const chestsContext = React.useContext(ChestsContext);
 
-  const shouldAnimate = chestsContext.openedChests.positions.find(() => {
-    //soon
+  const shouldAnimate = chestsContext.openedChests.positions.find((position) => {
+    const match = props.initialPosition.y === position.y && props.initialPosition.x === position.x;
+
+    return match;
   });
+
+  const animation = shouldAnimate ? 'chest-animation 1s steps(3) infinite' : null;
 
   return (
     <div style={{
@@ -25,7 +29,7 @@ const Chest = (props: IProps) => {
       height: TILE_SIZE,
       backgroundImage: 'url(./assets/CHEST.png)',
       backgroundRepeat: 'no-repeat',
-      animation: 'chest-animation 1s steps(3) infinite'
+      animation: animation
     }}
     />
   );
