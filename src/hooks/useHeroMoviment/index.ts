@@ -32,6 +32,10 @@ function useHeroMoviment (initialPosition) {
     if (moviment.nextMove.chest) {
       chestsContext.updateOpenedChests(moviment.nextPosition);
     }
+
+    if (chestsContext.totalChests === chestsContext.openedChests.total) {
+      //soon
+    }
   });
 
   return {
