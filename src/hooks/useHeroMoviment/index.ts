@@ -33,8 +33,8 @@ function useHeroMoviment (initialPosition) {
       chestsContext.updateOpenedChests(moviment.nextPosition);
     }
 
-    if (chestsContext.totalChests === chestsContext.openedChests.total && moviment.nextPosition.door) {
-      //soon
+    if (chestsContext.totalChests === chestsContext.openedChests.total && moviment.nextMove.door) {
+      console.log('YOU WIN');
     }
   });
 
