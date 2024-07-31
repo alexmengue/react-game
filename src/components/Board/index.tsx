@@ -55,12 +55,12 @@ const elements = getCanvasMap();
 const Board = () => {
   return (
     <div>
-      {/* <MiniDemon initialPosition={{ x: 8, y: 12 }}/>
-      <Demon />
-      <Chest />
-      <Trap /> */}
-
       {elements}
+      <img src="./assets/DOOR-OPEN.png" alt="opened door" style={{
+        position: "absolute",
+        left: "578px",
+        top: 0
+      }} />
       <img src="./assets/tileset.gif" alt="Game board"  width={GAME_SIZE} height={GAME_SIZE} />
     </div>
   );
