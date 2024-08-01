@@ -56,17 +56,23 @@ const elements = getCanvasMap();
 const Board = () => {
   const chestsContext = React.useContext(ChestsContext);
 
+  function renderOpenedDoor() {
+    return (
+      <img src="./assets/DOOR-OPEN.png" alt="opened door" style={{
+        position: "absolute",
+        left: 578,
+        top: 0
+      }} />
+    )
+  }
+
   return (
     <div>
       {elements}
 
       {
         chestsContext.totalChests === chestsContext.openedChests.total && (
-          <img src="./assets/DOOR-OPEN.png" alt="opened door" style={{
-            position: "absolute",
-            left: 578,
-            top: 0
-          }} />
+          renderOpenedDoor()
         )
       }
       <img src="./assets/tileset.gif" alt="Game board"  width={GAME_SIZE} height={GAME_SIZE} />
