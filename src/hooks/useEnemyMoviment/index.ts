@@ -20,6 +20,10 @@ useInterval(function move() {
       updateDirectionState(randomDirection);
       updatePositionState(moviment.nextPosition);
     }
+
+    if (moviment.nextMove.dead) {
+      alert('YOU DIED!');
+    }
   }, 2000);
 
   return {
