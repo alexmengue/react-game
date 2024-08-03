@@ -27,6 +27,7 @@ function useHeroMoviment (initialPosition) {
 
     if (moviment.nextMove.dead) {
       alert('YOU DIED!');
+      window.location.reload();
     }
 
     if (moviment.nextMove.chest) {
@@ -35,6 +36,7 @@ function useHeroMoviment (initialPosition) {
 
     if (chestsContext.totalChests === chestsContext.openedChests.total && moviment.nextMove.door) {
       alert('YOU WIN!');
+      window.location.reload();
     }
   });
 
