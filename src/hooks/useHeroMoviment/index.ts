@@ -38,7 +38,7 @@ function useHeroMoviment (initialPosition) {
 
     if (chestsContext.totalChests === chestsContext.openedChests.total && moviment.nextMove.door) {
       setTimeout(() => {
-        alert('YOU DIED!');
+        alert('YOU WIN!');
       });
       window.location.reload();
     }
