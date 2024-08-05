@@ -22,7 +22,9 @@ useInterval(function move() {
     }
 
     if (moviment.nextMove.dead) {
-      alert('YOU DIED!');
+      setTimeout(() => {
+        alert('YOU DIED!');
+      });
       window.location.reload();
     }
   }, 2000);

@@ -26,7 +26,9 @@ function useHeroMoviment (initialPosition) {
     }
 
     if (moviment.nextMove.dead) {
-      alert('YOU DIED!');
+      setTimeout(() => {
+        alert('YOU DIED!');
+      });
       window.location.reload();
     }
 
@@ -35,7 +37,9 @@ function useHeroMoviment (initialPosition) {
     }
 
     if (chestsContext.totalChests === chestsContext.openedChests.total && moviment.nextMove.door) {
-      alert('YOU WIN!');
+      setTimeout(() => {
+        alert('YOU DIED!');
+      });
       window.location.reload();
     }
   });
