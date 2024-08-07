@@ -27,7 +27,7 @@ const Chest = (props: IProps) => {
       height: TILE_SIZE,
       backgroundImage: 'url(./assets/CHEST.png)',
       backgroundRepeat: 'no-repeat',
-      animation: shouldAnimate && 'chest-animation 1s steps(3) infinite'
+      animation: shouldAnimate && 'chest-animation 1s steps(2) forwards'
     }}
     />
   );
